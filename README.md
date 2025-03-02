@@ -1,19 +1,19 @@
-# APA
+# Análise e Projeto de Algorítmos
 
 Repositório para o curso de Análise e Projeto de Algorítmos 2024.2 da @UFPB
 
 ## Índices
 
-1. [Análise Assintótica - Exercicios](#análise-assintótica---exercicios)
+1. [Análise Assintótica](#análise-assintótica)
    1. [Busca Sequencial](#1-busca-sequencial)
-   1. [Conta Ocorrências](#2-conta-ocorrências)
-   1. [Maior Elemento](#3-maior-elemento)
-   1. [Fibonacci Iterativo](#4-fibonacci-iterativo)
-   1. [Insertion Sort](#5-insertion-sort)
-   1. [Selection Sort](#6-selection-sort)
-   1. [Bubble Sort](#7-bubble-sort)
+   2. [Conta Ocorrências](#2-conta-ocorrências)
+   3. [Maior Elemento](#3-maior-elemento)
+   4. [Fibonacci Iterativo](#4-fibonacci-iterativo)
+   5. [Insertion Sort](#5-insertion-sort)
+   6. [Selection Sort](#6-selection-sort)
+   7. [Bubble Sort](#7-bubble-sort)
 
-## Análise Assintótica - Exercicios
+## Análise Assintótica
 
 ### Consderações
 
@@ -439,6 +439,8 @@ $T_m(n) = \frac{6n^2-6n}{2} + 6n-6 + 1$
 $T_m(n) = 3n^2-3n + 6n-5$
 
 $T_m(n) = 3n^2+3n-5$
+
+---
 
 ### 7. Bubble Sort
 
