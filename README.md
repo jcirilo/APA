@@ -11,6 +11,7 @@ Repositório para o curso de Análise e Projeto de Algorítmos 2024.2 da @UFPB
    1. [Fibonacci Iterativo](#4-fibonacci-iterativo)
    1. [Insertion Sort](#5-insertion-sort)
    1. [Selection Sort](#6-selection-sort)
+   1. [Bubble Sort](#7-bubble-sort)
 
 ## Análise Assintótica - Exercicios
 
