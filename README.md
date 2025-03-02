@@ -438,3 +438,99 @@ $T_m(n) = \frac{6n^2-6n}{2} + 6n-6 + 1$
 $T_m(n) = 3n^2-3n + 6n-5$
 
 $T_m(n) = 3n^2+3n-5$
+
+### 7. Bubble Sort
+
+![Bubble Sort](https://markbowman.org/LCC/SortBubble.gif)
+
+#### 7.1. Pseudocódigo
+
+```py
+1 Função BubbleSort(entrada: Lista) : Lista
+2   repita
+3       houveTroca = Falso;
+4       para i = 0 até Tamanho(entrada) - 1 faça
+5           se entrada[i] > entrada[i+1] então
+6               Troca(entrada[i], entrada[i+1]);
+7               houveTroca = Verdadeiro;
+8           fim
+9       fim
+10  até !houveTroca;
+11 fim
+```
+
+#### 7.2. Pior Caso
+
+O array está ordenado em ordem decrescente. Nesse caso, a condição da linha 5 será verdadeira executando as linhas 6 e 7 $\frac{n^2-n}{2}$ vezes e, consequentemente, executando a linha 2 $n$ vezes.
+
+##### 7.2.1. Contagem de passos
+
+Definindo as funções `Tamanho(entrada)` e `Trocar(a, b)`
+
+```py
+1. Tamanho(entrada):    #   op  exec    op * exec
+2.  return entrada.size #   1   1       1
+```
+
+$T(n) = 1$
+
+```py
+1. Trocar(a, b):    #   op  exec    op * exec
+2.   aux = a        #   1   1       1
+3.   a = b          #   1   1       1
+4.   b = aux        #   1   1       1
+```
+
+$T(n) = 3$
+
+```py
+1 Função BubbleSort(entrada: Lista) : Lista         #   op  exec            op * exec
+2   repita                                          #   1   n               1n
+3       houveTroca = Falso;                         #   1   n               1n
+4       para i = 0 até Tamanho(entrada) - 1 faça    #   3   n(n-1)          3(n^2-n)
+5           se entrada[i] > entrada[i+1] então      #   4   n(n-1)          4(n^2-n)
+6               Troca(entrada[i], entrada[i+1]);    #   6   (n-1)(1+n-1)/2  6(n^2-n)/2
+7               houveTroca = Verdadeiro;            #   1   (n-1)(1+n-1)/2  1(n^2-n)/2
+8           fim                                     #   0   n-1             0
+9       fim                                         #   0   n-1             0
+10  até !houveTroca;                                #   1   n               1n
+11 fim                                              #   0   1               0
+```
+
+##### 7.2.2. Polinômio
+
+$T_p(n) = \frac{7(n^2-n)}{2} + 7(n^2-n) + 3n$
+
+$T_p(n) = \frac{7n^2 - 7n}{2} + 7n^2 - 7n + 3n$
+
+$T_p(n) = 3.5n^2 - 3.5n + 7n^2 - 4n$
+
+$T_p(n) = 10.5n^2 - 7.5n$
+
+#### 7.3. Melhor caso
+
+O array já está ordenado em ordem crescente. Nesse caso, a condição da linha 5 sempre falhará executando as linhas 6 e 7 0 vezes e, consequentemente, executando a linha 2 apenas 1 vez.
+
+##### 7.3.1. Contagem de passos
+
+```py
+1 Função BubbleSort(entrada: Lista) : Lista         #   op  exec    op * exec
+2   repita                                          #   1   1       1
+3       houveTroca = Falso;                         #   1   1       1
+4       para i = 0 até Tamanho(entrada) - 1 faça    #   3   n-1     3(n-1)
+5           se entrada[i] > entrada[i+1] então      #   4   n-1     4(n-1)
+6               Troca(entrada[i], entrada[i+1]);    #   6   0       0
+7               houveTroca = Verdadeiro;            #   1   0       0
+8           fim                                     #   0   n-1     0
+9       fim                                         #   0   n-1     0
+10  até !houveTroca;                                #   1   1       1
+11 fim                                              #   0   1       0
+```
+
+##### 7.3.2. Polinômio
+
+$T_m(n) = 7(n-1) + 3$
+
+$T_m(n) = 7n-7 + 3$
+
+$T_m(n) = 7n-4$
